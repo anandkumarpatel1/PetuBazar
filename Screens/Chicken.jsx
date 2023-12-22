@@ -32,7 +32,7 @@ const Chicken = () => {
     <View style={{ flex: 1, justifyContent: "space-between", marginTop: 40 }}>
       {loading ? (
         <View style={{ flex: 1, justifyContent: "center" }}>
-          <ActivityIndicator size="large" color={"#E32636"} />
+          <ActivityIndicator size="40" color={"#E32636"} />
         </View>
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
