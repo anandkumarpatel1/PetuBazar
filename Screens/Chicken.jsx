@@ -1,9 +1,15 @@
-import { StyleSheet, ScrollView, View, Text } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  ActivityIndicator,
+} from "react-native";
 import React, { useEffect, useState } from "react";
-import FoodCard from "../components/FoodCard";
 import Bottom from "./Bottom";
-import Loader from "../components/Loader";
-import axios from 'axios'
+import axios from "axios";
+import CategoryCard from "../components/CategoryCard";
+import Header from "../components/Header";
 
 const Chicken = () => {
   const [loading, setLoading] = useState(false);
@@ -25,41 +31,20 @@ const Chicken = () => {
   return (
     <View style={{ flex: 1, justifyContent: "space-between", marginTop: 40 }}>
       {loading ? (
-        <Loader />
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <ActivityIndicator size="large" color={"#E32636"} />
+        </View>
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
-                        <View
-              style={{
-                borderWidth: 1,
-                borderColor: "#C0C0C0",
-                borderRadius: 5,
-                marginBottom: 10,
-                height: 40,
-                marginHorizontal: 10,
-                backgroundColor: "#DBD7D2",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 25,
-                  fontWeight: "800",
-                  textAlign: "center",
-                  color: "#E32636",
-                }}
-              >
-                Chicken
-              </Text>
-            </View>
+          <Header title={'Chicken'} />
           <View
             style={{
               flex: 1,
-              flexDirection: "row",
-              flexWrap: "wrap",
-              paddingBottom: 50,
+              paddingBottom: 10,
             }}
           >
             {chicken.map((item, index) => (
-              <FoodCard
+              <CategoryCard
                 key={index}
                 strMeal={item?.strMeal}
                 strMealThumb={item?.strMealThumb}

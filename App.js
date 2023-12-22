@@ -7,6 +7,7 @@ import About from "./Screens/About";
 import Bottom from "./Screens/Bottom";
 import Vegetarian from "./Screens/Vegetarian";
 import Chicken from "./Screens/Chicken";
+import FoodScreen from './Screens/FoodScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,13 @@ export default function App() {
         <Stack.Screen
           name="Chicken"
           component={Chicken}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="FoodScreen"
+          component={FoodScreen}
           options={{
             headerShown: false,
           }}
