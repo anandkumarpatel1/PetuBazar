@@ -19,6 +19,7 @@ const FoodCard = ({ strMeal, strMealThumb, idMeal }) => {
 
       onPress={() => Navigation.navigate('FoodScreen', {id: idMeal})}
     >
+      // add a button herer
       <Image
         style={{ width: 150, height: 150, borderRadius: 10 }}
         source={{
